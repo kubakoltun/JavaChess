@@ -7,10 +7,6 @@ public class Chess {
 
     public static void main(final String[] args) {
 
-        Board board = Board.createStandardBoard();
-
-        System.out.println(board);
-
         Table.get().show();
     }
 }

@@ -49,7 +49,8 @@ public class GameHistoryPanel extends JPanel {
 
             if (lastMove.getMovedPiece().getPieceAlliance().isWhite()) {
                 this.model.setValueAt(moveText + calculateCheckAndCheckMateHash(board), currentRow,0);
-            } else if (lastMove.getMovedPiece().getPieceAlliance().isBlack()) {
+            } 
+            else if (lastMove.getMovedPiece().getPieceAlliance().isBlack()) {
                 this.model.setValueAt(moveText + calculateCheckAndCheckMateHash(board), currentRow - 1, 1);
             }
         }
@@ -61,7 +62,8 @@ public class GameHistoryPanel extends JPanel {
     private String calculateCheckAndCheckMateHash(final Board board) {
         if (board.currentPlayer().isInCheckMate()) {
             return "#";
-        } else if (board.currentPlayer().isInCheck()) {
+        } 
+        else if (board.currentPlayer().isInCheck()) {
             return "+";
         }
         return "";
@@ -82,7 +84,7 @@ public class GameHistoryPanel extends JPanel {
 
         @Override
         public int getRowCount() {
-            if(this.values == null) {
+            if (this.values == null) {
                 return 0;
             }
             return this.values.size();
@@ -98,7 +100,8 @@ public class GameHistoryPanel extends JPanel {
             final Row currentRow = this.values.get(row);
             if (column == 0) {
                 return currentRow.getWhiteMove();
-            } else if (column == 1) {
+            } 
+            else if (column == 1) {
                 return currentRow.getBlackMove();
             }
             return null;
@@ -116,7 +119,8 @@ public class GameHistoryPanel extends JPanel {
             if (column == 0) {
                 currentRow.setWhiteMove((String)aValue);
                 fireTableRowsInserted(row, row);
-            } else if (column == 1) {
+            } 
+            else if (column == 1) {
                 currentRow.setBlackMove((String)aValue);
                 fireTableCellUpdated(row, column);
             }

@@ -19,7 +19,6 @@ public abstract class Tile {
             emptyTileMap.put(i, new EmptyTile(i));
         }
 
-        //Collections.unmodifiableMap(emptyTileMap);
         return ImmutableMap.copyOf(emptyTileMap);
     }
 

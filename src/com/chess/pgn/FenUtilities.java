@@ -7,7 +7,6 @@ import com.chess.engine.pieces.Pawn;
 import java.util.Locale;
 
 public class FenUtilities {
-
     private FenUtilities() {
         throw new RuntimeException("Not instantiable");
     }
@@ -84,6 +83,7 @@ public class FenUtilities {
     }
 
     private static String calculateCurrentPlayerText(final Board board) {
+        
         return board.currentPlayer().toString().substring(0, 1).toLowerCase();
     }
 }
